@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: lzr-server
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn main:app
+    healthCheckPath: /health
+    envVars:
+      - key: LZR_ADMIN_USER
+        value: LZR
+      - key: LZR_ADMIN_PASSWORD
+        value: FVMX3
+      - key: LZR_KEY_PREFIX
+        value: fletxo_
