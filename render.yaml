@@ -10,13 +10,13 @@ services:
         sync: false
       - key: LZR_ADMIN_PASSWORD
         sync: false
-      - key: LZR_API_SECRET
-        sync: false
+      - key: LZR_SESSION_SECRET
+        generateValue: true
       - key: LZR_KEY_PREFIX
         value: fletxo_
       - key: LZR_DATA_DIR
         value: /var/data
     disk:
-      name: lzr-server-data
+      name: lzr-data
       mountPath: /var/data
       sizeGB: 1
